@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Person</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<h1>Добавить клиента:</h1>
+
+<form th:action="@{/addPerson}"
+      th:object="${personForm}" method="POST">
+    Имя:
+    <input type="text" th:field="*{firstName}" />
+    <br/>
+    Фамилия:
+    <input type="text" th:field="*{lastName}" />
+    <br/>
+    Номер счета:
+    <input type="text" th:field="*{accountNumber}" />
+    <br/>
+    Начальный баланс:
+    <input type="text" th:field="*{balance}" />
+    <br/>
+    E-mail:
+    <input type="text" th:field="*{email}" />
+    <br/>
+    Телефон:
+    <input type="text" th:field="*{phone}" />
+    <br/>
+    <input type="submit" value="Создать" />
+    <br/>
+    <a th:href="@{/personList}">Назад</a>
+</form>
+
+<br/>
+
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:red;font-style:italic;">
+</div>
+
+</body>
+</html>

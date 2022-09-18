@@ -1,0 +1,30 @@
+h1 {
+   color:blue;
+}
+
+h2 {
+   color:#FF0000;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+footer {
+   margin-top:60px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 3px solid grey;
+    padding: 5px;
+    border-collapse: collapse;
+    /*убираем пустые промежутки между ячейками*/
+    border: 1px solid grey;
+    /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+}
+
+.table th, td {
+    border: 1px solid grey;
+    background-color: #8FBC8F;
+}

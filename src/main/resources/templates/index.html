@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="fragments/head :: #head-section"></div>
+</head>
+<body>
+<!-- -->
+<header>
+    <div>
+        <h1>Cash Machine.</h1>
+        <p th:text="'Hello, ' + ${name} + '!'" />
+    </div>
+</header>
+<main>
+    <h2 th:utext="${message}">..!..</h2>
+    <a th:href="@{/personList}">Person List</a>
+</main>
+<footer>
+    <div th:insert="fragments/footer :: copy"></div>
+</footer>
+</body>
+</html>

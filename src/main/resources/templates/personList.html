@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Person List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<h1>Список клиентов</h1>
+<a href="addPerson">Добавить клиента</a>
+<br/><br/>
+<div class="table">
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Номер счета</th>
+            <th>Баланс</th>
+            <th>E-mail</th>
+            <th>Телефон</th>
+        </tr>
+        <tr th:each ="person : ${persons}">
+            <td th:utext="${person.id}">...</td>
+            <td th:utext="${person.firstName}">...</td>
+            <td th:utext="${person.lastName}">...</td>
+            <td th:utext="${person.accountNumber}">...</td>
+            <td th:utext="${person.balance}">...</td>
+            <td th:utext="${person.email}">...</td>
+            <td th:utext="${person.phone}">...</td>
+        </tr>
+    </table>
+    <a th:href="@{/}">Назад</a>
+</div>
+</body>
+</html>
