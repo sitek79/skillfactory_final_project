@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    /* font-family: verdana, arial, sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    color: #fff;
+    font-size: 1.1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    background-color: #a6abad;
+    flex: 2 2 12em;
+    padding: 1em;
+}
+
+nav,
+aside {
+    flex: 1;
+    background-color: #455a64;
+}
+
+nav {
+    order: -1;
+}
+
+header,
+footer {
+    flex: 0 0 5em;
+    background-color: #c7d3dae1;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        min-height: 100vh;
+    }
+
+    main {
+        flex-direction: row;
+        min-height: 100%;
+        flex: 1 1 auto;
+    }
+}
+
+pre {
+    width: 90%;
+    height: auto;
+    background-color: gainsboro;
+    color: #455a64;
+    border: 3px solid;
+    border-radius: 2px 2px 2px 2px;
+}
+
+.hl-java {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+/* Footer */
+.footer-settings {
+  flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 20px;
+  background-color: aquamarine;
+  color: black;
+}

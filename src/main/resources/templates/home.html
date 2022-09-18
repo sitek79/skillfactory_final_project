@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>POS Terminal. Menu.</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Меню банкомата.</h1>
+        <h2>1. <a th:href="@{/admin}">Меню администратора</a></h2>
+        <h2>2. <a th:href="@{/user}">Меню пользователя</a></h2>
+        <h2>3. <a th:href="@{/settings}">Страница настроек банкомата</a></h2>
+        <h2>4. <a th:href="@{/history}">История операций банкомата</a></h2>
+        <h2>5. <a th:href="@{/about}">Системная информация</a></h2>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

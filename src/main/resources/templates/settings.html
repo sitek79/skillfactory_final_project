@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS Settings</title>
+    <link rel="stylesheet" type="text/css" href="css/style_settings.css" /> <!-- подключение файла стилей CSS -->
+    <link rel="stylesheet" type="text/css" href="css/top-menu.css" /> <!-- подключение файла стилей меню CSS -->
+    <!-- подключение файла стилей левого меню CSS -->
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" /> <!-- подключение иконки favicon -->
+    <!-- <link rel="import" href="menu/menu.html" /> -->
+    <!-- https://code.jquery.com/jquery-3.6.1.min.js -->
+    <!-- отложенная загрузка библиотеки jQuery -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="js/top-menu.js"></script>
+</head>
+
+<body>
+<header>
+    <!-- <p>Header</p> -->
+    <!-- Menu -->
+    <div class="navbar">
+        <a href="#">Главная</a>
+        <a href="#">Настройки</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()"> Обновление
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">Обновление операционной системы.</a>
+                <a href="#">Обновление прошивки микроконтроллера.</a>
+                <a href="#">Перезагрузка</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <article>
+        <h1>Страница настроек банкомата.</h1>
+        <p>
+            Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+            вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на
+            латинице с начала XVI века. В то время некий безымянный печатник
+            создал большую коллекцию размеров и форм шрифтов, используя Lorem
+            Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
+            без заметных изменений пять веков, но и перешагнул в электронный
+            дизайн. Его популяризации в новое время
+        </p>
+        <pre><code class="hl-java">
+            public class Program{
+                public static void main(String[] args) {
+                    Person tom = new Person("Tom");
+                    System.out.println(tom.toString()); // Person Tom
+                }
+            }
+            class Person {
+                private String name;
+                public Person(String name){
+                    this.name=name;
+                }
+                @Override
+                public String toString(){
+                    return "Person " + name;
+                }
+            }
+        </code></pre>
+    </article>
+    <nav>
+
+    </nav>
+    <aside>
+        <p>Ссылки</p>
+    </aside>
+</main>
+<footer class="footer-settings">
+    <h1>footer</h1>
+</footer>
+<script>
+    if (window.jQuery) {
+        // код выполнится в случае если jQuery подключен к странице
+        // выведем версию jQuery в консоль
+        var verJquery = jQuery.fn.jquery;
+        console.log('jQuery ' + verJquery);
+        // работаем с Document Object Model
+        document.addEventListener('DOMContentLoaded', function() {
+            /* код на jQuery */
+            // установим для body белый фон
+            // установка $j в качестве псевдонима функции jQuery
+            var $j = jQuery.noConflict();
+            $j('body').css('background-color', 'white');
+            // выровняем h1 по центру
+            $j('h1').css('text-align', 'center');
+            // добавим в конец страницы элемент div с текстом о версии библиотеки jQuery"
+            const jq = 'подключена библиотка jQuery ';
+            $j('body').append('<div style="text-align: center; font-size: 20px;">' + jq + verJquery + '</div>');
+        });
+    } else {
+        // код выполнится в случае если jQuery не подключен к странице
+        console.log("Библиотека jQuery не обнаружена");
+    }
+    </script>
+</body>
+
+</html>

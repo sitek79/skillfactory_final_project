@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>User page (Spring Security protected)</h1>
+
+        <h1 th:inline="text">Здравствуйте, [[${#httpServletRequest.remoteUser}]]!</h1>
+        <div>Ваш текущий баланс: </div>
+        <div>
+            <form method="post">
+                <input type="text" name="text" placeholder="Введите сообщение" />
+                <input type="text" name="tag" placeholder="Тэг" />
+                <button type="submit">Добавить</button>
+                <sec:csrfInput/>
+            </form>
+        </div>
+
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+
+    </div>
+
+</div>
+<!-- /.container -->
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
