@@ -35,7 +35,7 @@ ALTER ROLE cash WITH Superuser;
 \q
 ```
 
-управляем жизненным циклом проекта в консоли:
+#### управляем жизненным циклом проекта в консоли:
 ```mvn spring-boot:run  
 mvn spring-boot:run
 # Builds with 4 threads
