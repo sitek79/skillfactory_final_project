@@ -13,7 +13,7 @@ API для Интернет-банка
 
 Ответ выдается в виде JSON.
 ___
-Прежде чем подключаться к БД из программы, нужно в консоли PSQL настроить права доступа:
+#### Прежде чем подключаться к БД из программы, нужно в консоли PSQL настроить права доступа:
 ```
 cd G:\prog\postgres\postgresql_14.1\pgsql\bin\
 # синтаксис консоли Powershell 7 немного похож на Linux
@@ -34,7 +34,6 @@ ALTER ROLE cash WITH Superuser;
 # Выходим из SQL-оболочки:
 \q
 ```
-
 #### управляем жизненным циклом проекта в консоли:
 ```mvn spring-boot:run  
 mvn spring-boot:run
@@ -58,7 +57,7 @@ java -jar silent-0.0.1-SNAPSHOT.jar
 Например, в данном примере он находится в подкаталоге /config текущего каталога запуска.
 
 просмотреть содержимое архива:  
-```jar tvf target/pos-0.0.1-SNAPSHOT.jar```
+```jar tvf target/pos-0.0.1-SNAPSHOT.jar```  
 
 Запускаем программу.
 ---
@@ -79,6 +78,6 @@ java -jar silent-0.0.1-SNAPSHOT.jar
 5. Удалить клиента REST API HTTP Method: DELETE
 ```curl -X DELETE -H "Content-Type: application/json" http://localhost:9091/api/terminal/v1/clients/1```
 
-Открываем веб-интерфейс нашего сервиса в браузере:  
+Смотрим JSON ответ нашего REST сервиса в браузере:  
 ```http://localhost:9091/api/terminal/v1/clients```  
 ![img_3_web.png](img_3_web.png)
