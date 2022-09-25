@@ -18,8 +18,10 @@ public class ClientRepositoryImpl implements ClientRepositoryCustom {
 
     public void putMoney(){
         System.out.println("<-- Put Money -->");
+        clientRepository.save(new Client(10,555888));
     }
     public void takeMoney() {
         System.out.println("<-- Take Money -->");
+        clientRepository.save(new Client(11,334455));
     }
 }

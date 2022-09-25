@@ -15,6 +15,7 @@ public class Client {
         this.balance = balance;
     }
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
@@ -37,5 +38,9 @@ public class Client {
     @Override
     public String toString() {
         return "Client [id=" + id + ", balance=" + balance + "]";
+    }
+
+    public void deposit(long deposit) {
+        this.balance = balance + deposit;
     }
 }
