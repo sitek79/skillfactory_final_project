@@ -10,9 +10,7 @@ public class Employee {
     private String lastName;
     private String emailId;
 
-    public Employee() {
-
-    }
+    public Employee() {}
 
     public Employee(String firstName, String lastName, String emailId) {
         this.firstName = firstName;
