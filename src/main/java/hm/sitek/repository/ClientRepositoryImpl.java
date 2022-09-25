@@ -12,6 +12,8 @@ public class ClientRepositoryImpl implements ClientRepositoryCustom {
 
     public void getBalance() {
         System.out.println("<-- Balance -->");
+        //clientRepository.findAll().forEach(x -> System.out.println(x));
+        clientRepository.getReferenceById(2l);
     }
 
     public void putMoney(){

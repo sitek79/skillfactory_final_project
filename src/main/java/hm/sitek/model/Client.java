@@ -36,6 +36,6 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Employee [id=" + id + ", balance=" + balance + "]";
+        return "Client [id=" + id + ", balance=" + balance + "]";
     }
 }

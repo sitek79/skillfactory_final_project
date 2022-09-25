@@ -32,12 +32,12 @@ public class ClientController {
     }
 
     @PostMapping("/clients")
-    public Client createEmployee(@Valid @RequestBody Client client) {
+    public Client createClient(@Valid @RequestBody Client client) {
         return clientRepository.save(client);
     }
 
     @PutMapping("/clients/{id}")
-    public ResponseEntity<Client> updateEmployee(@PathVariable(value = "id") Long clientId,
+    public ResponseEntity<Client> updateClient(@PathVariable(value = "id") Long clientId,
                                                    @Valid @RequestBody Client clientDetails) throws ResourceNotFoundException {
         Client client = clientRepository.findById(clientId)
                 .orElseThrow(() -> new ResourceNotFoundException("Client с данным Id не найден :: " + clientId));
@@ -49,7 +49,7 @@ public class ClientController {
     }
 
     @DeleteMapping("/clients/{id}")
-    public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Long clientId)
+    public Map<String, Boolean> deleteClient(@PathVariable(value = "id") Long clientId)
             throws ResourceNotFoundException {
         Client client = clientRepository.findById(clientId)
                 .orElseThrow(() -> new ResourceNotFoundException("Client с данным Id не найден :: " + clientId));

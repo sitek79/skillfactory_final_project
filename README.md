@@ -67,16 +67,16 @@ java -jar silent-0.0.1-SNAPSHOT.jar
 и выполним запрос:  
 ```select * from clients;```  
 Тестируем REST API CRUD операции:
-1. Создадим клиента. HTTP Method: POST
-```curl -X POST -H "Content-Type: application/json" -d '{"balance":"10888"}' http://localhost:9091/api/terminal/v1/clients```
-2. Найти клиента по ID REST API. HTTP Method: GET
-```curl http://localhost:9091/api/terminal/v1/clients/2```
-3. Найти всех клиентов REST API. HTTP Method: GET
-```curl http://localhost:9091/api/terminal/v1/clients```
-4. Обновить данные клиента REST API. HTTP Method: PUT
-```curl -X PUT -H "Content-Type: application/json" -d '{"balance":"330888"}' "http://localhost:9091/api/terminal/v1/clients/2"```
-5. Удалить клиента REST API HTTP Method: DELETE
-```curl -X DELETE -H "Content-Type: application/json" http://localhost:9091/api/terminal/v1/clients/1```
+1. Создадим клиента. HTTP Method: POST  
+```curl -X POST -H "Content-Type: application/json" -d '{"balance":"10888"}' http://localhost:9091/api/terminal/v1/clients```  
+2. Найти клиента по ID REST API. HTTP Method: GET  
+```curl http://localhost:9091/api/terminal/v1/clients/2```  
+3. Найти всех клиентов REST API. HTTP Method: GET  
+```curl http://localhost:9091/api/terminal/v1/clients```  
+4. Обновить данные клиента REST API. HTTP Method: PUT  
+```curl -X PUT -H "Content-Type: application/json" -d '{"balance":"330888"}' "http://localhost:9091/api/terminal/v1/clients/2"```  
+5. Удалить клиента REST API HTTP Method: DELETE  
+```curl -X DELETE -H "Content-Type: application/json" http://localhost:9091/api/terminal/v1/clients/1```  
 
 Смотрим JSON ответ нашего REST сервиса в браузере:  
 ```http://localhost:9091/api/terminal/v1/clients```  
