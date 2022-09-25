@@ -12,35 +12,7 @@ API для Интернет-банка
 - Перевести заданную сумму другому пользователю.
 
 Ответ выдается в виде JSON.
-
-управляем жизненным циклом проекта в консоли:
-```mvn spring-boot:run  
-mvn spring-boot:run
-# Builds with 4 threads
-mvn -T 4 clean spring-boot:run
-# 2 thread per cpu core
-mvn -T 2C spring-boot:run
-mvn package
-mvn clean package
-mvn -T 4 clean package
-java -Dfile.encoding=windows-1251 -jar target/pos-0.0.1-SNAPSHOT.jar
-# 
-java -jar silent-0.0.1-SNAPSHOT.jar
--- если application.properties находится в подкаталоге /config текущего каталога запуска .jar файла
-java -jar silent-0.0.1-SNAPSHOT.jar --spring.config.location=optional:file:./config/
-
-'C:\prog\java\spring_thymeleaf_layout\silent\target'
-
-java -jar myproject.jar --spring.config.location=\
-    optional:classpath:/application.properties,\
-    optional:classpath:/override.properties
-# Running the Application
-mvn clean package spring-boot:repackage
-java -jar target/spring-boot-ops.war
-```
-просмотреть содержимое архива:  
-```jar tvf target/pos-0.0.1-SNAPSHOT.jar```
-
+___
 Прежде чем подключаться к БД из программы, нужно в консоли PSQL настроить права доступа:
 ```
 cd G:\prog\postgres\postgresql_14.1\pgsql\bin\
@@ -62,14 +34,51 @@ ALTER ROLE cash WITH Superuser;
 # Выходим из SQL-оболочки:
 \q
 ```
-Теперь можно запускать программу.  
-Посмотрим как инициализировалась БД и выполним запрос:  
-```select * from cash_machine;```
-![img.png](img.png)
 
-Открываем веб интерфейс нашего сервиса в браузере:  
-http://localhost:9091/
-Логин, пароль и порт берем из файла *application.properties*
+управляем жизненным циклом проекта в консоли:
+```mvn spring-boot:run  
+mvn spring-boot:run
+# Builds with 4 threads
+mvn -T 4 clean spring-boot:run
+# 2 thread per cpu core
+mvn -T 2C spring-boot:run
+mvn package
+mvn clean package
+mvn -T 4 clean package
+java -Dfile.encoding=windows-1251 -jar target/pos-0.0.1-SNAPSHOT.jar
+mvn clean package spring-boot:repackage
+# 
+java -jar silent-0.0.1-SNAPSHOT.jar
+```
+#### Логин, пароль и порт берем из файла *application.properties*  
+Соответственно, параметры подключения к базе данных можно изменить.  
+А запустить .jar файл с указанием откуда читать *application.properties* можно так:  
+```java -jar silent-0.0.1-SNAPSHOT.jar --spring.config.location=optional:file:./config/```
+![img_1_config_dir.png](img_1_config_dir.png)  
+Например, в данном примере он находится в подкаталоге /config текущего каталога запуска.
 
-Тестируем в консоли:
-curl http://localhost:9091/login
+просмотреть содержимое архива:  
+```jar tvf target/pos-0.0.1-SNAPSHOT.jar```
+
+Запускаем программу.
+---
+``` mvn -T 4 clean spring-boot:run ```  
+Посмотрим как инициализировалась БД  
+![img_2_DB_init.png](img_2_DB_init.png)
+и выполним запрос:  
+```select * from clients;```  
+Тестируем REST API CRUD операции:
+1. Создадим клиента. HTTP Method: POST
+```curl -X POST -H "Content-Type: application/json" -d '{"balance":"10888"}' http://localhost:9091/api/terminal/v1/clients```
+2. Найти клиента по ID REST API. HTTP Method: GET
+```curl http://localhost:9091/api/terminal/v1/clients/2```
+3. Найти всех клиентов REST API. HTTP Method: GET
+```curl http://localhost:9091/api/terminal/v1/clients```
+4. Обновить данные клиента REST API. HTTP Method: PUT
+```curl -X PUT -H "Content-Type: application/json" -d '{"balance":"330888"}' "http://localhost:9091/api/terminal/v1/clients/2"```
+5. Удалить клиента REST API HTTP Method: DELETE
+```curl -X DELETE -H "Content-Type: application/json" http://localhost:9091/api/terminal/v1/clients/1```
+
+Открываем веб-интерфейс нашего сервиса в браузере:  
+```http://localhost:9091/api/terminal/v1/clients```  
+![img_3_web.png](img_3_web.png)
