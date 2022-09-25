@@ -42,8 +42,8 @@ public class ClientController {
         Client client = clientRepository.findById(clientId)
                 .orElseThrow(() -> new ResourceNotFoundException("Client с данным Id не найден :: " + clientId));
         client.setBalance(clientDetails.getBalance());
-        //client.setLastName(employeeDetails.getLastName());
-        //client.setFirstName(employeeDetails.getFirstName());
+        //client.setLastName(clientDetails.getLastName());
+        //client.setFirstName(clientDetails.getFirstName());
         final Client updatedClient = clientRepository.save(client);
         return ResponseEntity.ok(updatedClient);
     }
@@ -52,7 +52,7 @@ public class ClientController {
     public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Long clientId)
             throws ResourceNotFoundException {
         Client client = clientRepository.findById(clientId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + clientId));
+                .orElseThrow(() -> new ResourceNotFoundException("Client с данным Id не найден :: " + clientId));
 
         clientRepository.delete(client);
         Map<String, Boolean> response = new HashMap<>();
