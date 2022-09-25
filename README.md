@@ -81,3 +81,6 @@ java -jar silent-0.0.1-SNAPSHOT.jar
 Смотрим JSON ответ нашего REST сервиса в браузере:  
 ```http://localhost:9091/api/terminal/v1/clients```  
 ![img_3_web.png](img_3_web.png)
+
+Дамп схемы БД лежит в корне проекта:  
+![img_4_dump.png](img_4_dump.png)
