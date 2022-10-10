@@ -52,7 +52,10 @@ public class Application implements CommandLineRunner {
 		System.out.println("\ntakeMoney");
 		clientRepository.takeMoney();
 		//
-		// OperationsRepository
+		System.out.println("\ngetOperationList");
+		operationsRepository.findAll();
+		//
+		// work With OperationsRepository
 		operationsRepository.save(new Operations(1, 1, 2, amount));
 	}
 }

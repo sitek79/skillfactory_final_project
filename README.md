@@ -106,7 +106,9 @@ _Шаг 3.  Добавьте операцию getOperationList в Rest API_
 ___
 Структура таблицы для хранения списка операций    
 ![img_5_operations_db.png](img_5_operations_db.png)
-
+В браузере Operations List отображается так:  
+http://localhost:9091/api/terminal/v1/operations
+![img_6_operations_web_json.png](img_6_operations_web_json.png)
 ___
 *Этап 3*  
 Добавляем возможность перевода денег  

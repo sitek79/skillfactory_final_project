@@ -17,7 +17,7 @@ public class OperationsController {
     OperationsRepository operationsRepository;
 
     @GetMapping("/operations")
-    public List<Operations> getAllOperations() {
+    public List<Operations> getOperationList() {
         return operationsRepository.findAll();
     }
 }

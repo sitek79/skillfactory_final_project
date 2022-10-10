@@ -7,8 +7,11 @@ import org.springframework.context.annotation.Lazy;
 public class ClientRepositoryImpl implements ClientRepositoryCustom {
 
     @Autowired
-            @Lazy
+    @Lazy
     ClientRepository clientRepository;
+
+    @Autowired
+    OperationsRepository operationsRepository;
 
     public void getBalance() {
         System.out.println("<-- Balance -->");
@@ -23,5 +26,9 @@ public class ClientRepositoryImpl implements ClientRepositoryCustom {
     public void takeMoney() {
         System.out.println("<-- Take Money -->");
         clientRepository.save(new Client(11,334455));
+    }
+    public void getOperationList() {
+        System.out.println("<-- Get Operation List -->");
+        operationsRepository.findAll();
     }
 }
